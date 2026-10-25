@@ -1,0 +1,29 @@
+{
+  "publicBaseUrl": "",
+  "associationEmail": "",
+  "appsScriptWebAppUrl": "",
+  "certificateNumberPattern": "^[A-Z0-9-]{4,24}$",
+  "certificatePatternNoteEn": "Placeholder only — replace when the association approves its certificate-number format.",
+  "certificatePatternNoteFa": "این الگو موقت است؛ پس از تصویب قالب شماره گواهی، آن را تغییر دهید.",
+  "head": {
+    "name": "",
+    "roleEn": "Current association head",
+    "roleFa": "مسئول فعلی انجمن",
+    "email": "",
+    "termEn": "",
+    "termFa": ""
+  },
+  "supervisor": {
+    "name": "",
+    "roleEn": "Faculty supervisor",
+    "roleFa": "استاد ناظر انجمن",
+    "email": ""
+  },
+  "social": {
+    "telegram": "",
+    "instagram": "",
+    "linkedin": "",
+    "other": ""
+  },
+  "contactRetentionMonths": 12
+}

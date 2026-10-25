@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#F7F7F1"/>
+  <path d="M790 0H1200V630H920c-100-110-135-205-65-330S850 80 790 0Z" fill="#EEF1E9"/>
+  <g fill="none" stroke-width="2"><ellipse cx="935" cy="316" rx="230" ry="120" transform="rotate(-29 935 316)" stroke="#7AA793"/><ellipse cx="935" cy="316" rx="230" ry="120" transform="rotate(36 935 316)" stroke="#CDC28A" stroke-dasharray="7 10"/><path d="M720 390 850 235 935 316 1070 178 1150 250" stroke="#7AA793"/></g>
+  <circle cx="935" cy="316" r="95" fill="#7AA793"/><circle cx="935" cy="316" r="68" fill="#172724"/><text x="935" y="337" text-anchor="middle" font-family="Georgia,serif" font-size="57" font-weight="700" fill="#CDC28A">DH</text>
+  <text x="82" y="110" font-family="Arial,sans-serif" font-size="22" letter-spacing="5" fill="#285F4B">SHIRAZ UNIVERSITY</text>
+  <text x="82" y="210" font-family="Arial,sans-serif" font-size="52" font-weight="700" fill="#172724">Digital Humanities</text>
+  <text x="82" y="276" font-family="Arial,sans-serif" font-size="52" font-weight="700" fill="#172724">Student Association</text>
+  <rect x="82" y="334" width="90" height="5" fill="#7AA793"/>
+  <text x="82" y="398" font-family="Arial,sans-serif" font-size="26" fill="#56645F">Humanities, in dialogue with computation.</text>
+  <text x="82" y="560" font-family="Arial,sans-serif" font-size="20" fill="#56645F">Faculty of Humanities and Letters · Foreign Languages and Linguistics</text>
+</svg>

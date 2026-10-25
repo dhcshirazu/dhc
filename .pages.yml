@@ -1,0 +1,181 @@
+media:
+  input: content/media
+  output: /media
+content:
+  - name: site-settings
+    label: Site settings and contacts
+    type: file
+    path: content/site-settings.json
+    format: json
+    fields:
+      - name: publicBaseUrl
+        label: Public site URL
+        type: string
+      - name: associationEmail
+        label: Association email
+        type: string
+      - name: appsScriptWebAppUrl
+        label: Google Apps Script web app URL
+        type: string
+      - name: certificateNumberPattern
+        label: Certificate number regex (placeholder until approved)
+        type: string
+      - name: certificatePatternNoteEn
+        label: Certificate pattern note (English)
+        type: text
+      - name: certificatePatternNoteFa
+        label: Certificate pattern note (Persian)
+        type: text
+      - name: head
+        label: Association head
+        type: object
+        fields:
+          - { name: name, label: Public name, type: string }
+          - { name: roleEn, label: Role (English), type: string }
+          - { name: roleFa, label: Role (Persian), type: string }
+          - { name: email, label: Public email, type: string }
+          - { name: termEn, label: Term (English), type: string }
+          - { name: termFa, label: Term (Persian), type: string }
+      - name: supervisor
+        label: Faculty supervisor
+        type: object
+        fields:
+          - { name: name, label: Public name, type: string }
+          - { name: roleEn, label: Role (English), type: string }
+          - { name: roleFa, label: Role (Persian), type: string }
+          - { name: email, label: Public email, type: string }
+      - name: social
+        label: Official social links
+        type: object
+        fields:
+          - { name: telegram, label: Telegram URL, type: string }
+          - { name: instagram, label: Instagram URL, type: string }
+          - { name: linkedin, label: LinkedIn URL, type: string }
+          - { name: other, label: Other official channel URL, type: string }
+      - name: contactRetentionMonths
+        label: Contact-message retention period (months)
+        type: number
+  - name: events
+    label: Events
+    type: file
+    path: content/events.json
+    format: json
+    list: true
+    fields:
+      - { name: slug, label: URL slug (lowercase, hyphenated), type: string, required: true, pattern: "^[a-z0-9-]+$" }
+      - { name: titleEn, label: Title (English), type: string, required: true }
+      - { name: titleFa, label: Title (Persian), type: string, required: true }
+      - { name: dateISO, label: Gregorian date YYYY-MM-DD, type: date, required: true }
+      - { name: dateEn, label: Display date (English), type: string, required: true }
+      - { name: dateFa, label: Display date (Persian calendar), type: string, required: true }
+      - { name: speaker, label: Speaker name, type: string, required: true }
+      - { name: speakerTimeZone, label: Speaker timezone (IANA), type: string }
+      - { name: speakerTime, label: Speaker local time, type: string }
+      - { name: tehranTime, label: Tehran time, type: string }
+      - { name: languageEn, label: Session language (English display), type: string }
+      - { name: languageFa, label: Session language (Persian display), type: string }
+      - { name: modality, label: Modality (online or in-person), type: select, options: [{ label: Online, value: online }, { label: In person, value: in-person }] }
+      - { name: platform, label: Platform or venue, type: string }
+      - { name: abstractEn, label: Abstract (English), type: text }
+      - { name: abstractFa, label: Abstract (Persian), type: text }
+      - { name: topicTags, label: Topic tags, type: string, list: true }
+      - { name: registrationUrl, label: Registration URL (HTTPS), type: string }
+      - { name: attendanceUrl, label: Attendance URL (HTTPS; remove/expire after session), type: string }
+      - { name: linkExpiresAt, label: Attendance/registration link expiry (ISO datetime), type: string }
+      - { name: published, label: Published, type: boolean }
+  - name: webinars
+    label: Webinar archive
+    type: file
+    path: content/webinars.json
+    format: json
+    list: true
+    fields:
+      - { name: slug, label: URL slug, type: string, required: true, pattern: "^[a-z0-9-]+$" }
+      - { name: titleEn, label: Title (English), type: string, required: true }
+      - { name: titleFa, label: Title (Persian), type: string, required: true }
+      - { name: dateISO, label: Gregorian date YYYY-MM-DD, type: date, required: true }
+      - { name: dateEn, label: Display date (English), type: string, required: true }
+      - { name: dateFa, label: Display date (Persian calendar), type: string, required: true }
+      - { name: speaker, label: Speaker, type: string, required: true }
+      - { name: topicTags, label: Topic tags, type: string, list: true }
+      - { name: descriptionEn, label: Description (English), type: text }
+      - { name: descriptionFa, label: Description (Persian), type: text }
+      - { name: recordingStatus, label: Recording status, type: select, options: [{ label: Available, value: available }, { label: Not recorded, value: not_recorded }, { label: Speaker has not permitted sharing, value: restricted }, { label: Status not confirmed, value: unknown }] }
+      - { name: recordingUrl, label: Approved YouTube URL, type: string }
+      - { name: rightsApproved, label: Explicit sharing permission received, type: boolean }
+      - { name: published, label: Published, type: boolean }
+  - name: articles
+    label: Articles and tutorials
+    type: file
+    path: content/articles.json
+    format: json
+    list: true
+    fields:
+      - { name: slug, label: URL slug, type: string, required: true, pattern: "^[a-z0-9-]+$" }
+      - { name: titleEn, label: Title (English), type: string, required: true }
+      - { name: titleFa, label: Title (Persian), type: string, required: true }
+      - { name: author, label: Author(s), type: string }
+      - { name: dateISO, label: Publication date YYYY-MM-DD, type: date, required: true }
+      - { name: dateEn, label: Display date (English), type: string, required: true }
+      - { name: dateFa, label: Display date (Persian), type: string, required: true }
+      - { name: summaryEn, label: Summary (English), type: text }
+      - { name: summaryFa, label: Summary (Persian), type: text }
+      - { name: bodyEn, label: Article body (English; plain paragraphs), type: text }
+      - { name: bodyFa, label: Article body (Persian; plain paragraphs), type: text }
+      - { name: imageUrl, label: Optional article image, type: image, options: { path: articles } }
+      - { name: imageAltEn, label: Image alt text (English), type: string }
+      - { name: imageAltFa, label: Image alt text (Persian), type: string }
+      - { name: topicTags, label: Topic tags, type: string, list: true }
+      - { name: published, label: Published, type: boolean }
+  - name: members
+    label: Current and former members
+    type: file
+    path: content/members.json
+    format: json
+    list: true
+    fields:
+      - { name: name, label: Public name, type: string, required: true }
+      - { name: roleEn, label: Role (English), type: string, required: true }
+      - { name: roleFa, label: Role (Persian), type: string, required: true }
+      - { name: termEn, label: Term (English), type: string }
+      - { name: termFa, label: Term (Persian), type: string }
+      - { name: bioEn, label: Short bio (English), type: text }
+      - { name: bioFa, label: Short bio (Persian), type: text }
+      - { name: photoUrl, label: Optional member photo, type: image, options: { path: members } }
+      - { name: photoAltEn, label: Photo alt text (English), type: string }
+      - { name: photoAltFa, label: Photo alt text (Persian), type: string }
+      - { name: consentToPublish, label: Explicit consent to publish name and role, type: boolean }
+      - { name: photoConsent, label: Explicit consent to publish this photo, type: boolean }
+      - { name: current, label: Current member, type: boolean }
+  - name: announcements
+    label: Announcements
+    type: file
+    path: content/announcements.json
+    format: json
+    list: true
+    fields:
+      - { name: titleEn, label: Title (English), type: string, required: true }
+      - { name: titleFa, label: Title (Persian), type: string, required: true }
+      - { name: bodyEn, label: Text (English), type: text }
+      - { name: bodyFa, label: Text (Persian), type: text }
+      - { name: dateISO, label: Date YYYY-MM-DD, type: date, required: true }
+      - { name: dateEn, label: Display date (English), type: string, required: true }
+      - { name: dateFa, label: Display date (Persian), type: string, required: true }
+      - { name: linkUrl, label: Optional related page URL, type: string }
+      - { name: linkLabelEn, label: Link label (English), type: string }
+      - { name: linkLabelFa, label: Link label (Persian), type: string }
+      - { name: published, label: Published, type: boolean }
+  - name: certificates
+    label: Certificate verification records (public fields only)
+    type: file
+    path: content/certificates.json
+    format: json
+    list: true
+    fields:
+      - { name: number, label: Certificate number, type: string, required: true }
+      - { name: holderNameEn, label: Holder name (English), type: string, required: true }
+      - { name: holderNameFa, label: Holder name (Persian), type: string, required: true }
+      - { name: issueDateEn, label: Issue date (English), type: string, required: true }
+      - { name: issueDateFa, label: Issue date (Persian calendar), type: string, required: true }
+      - { name: descriptionEn, label: Certificate type/course (English), type: string, required: true }
+      - { name: descriptionFa, label: Certificate type/course (Persian), type: string, required: true }
