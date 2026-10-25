@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the bilingual Digital Humanities Student Association static website.
+"""Build the bilingual Digital Humanities Center (DHC) and student association website.
 
 Content source files live in content/*.json. This script uses only the Python
 standard library and writes the deployable site to dist/.
@@ -37,11 +37,11 @@ LABELS = {
     "en": {
         "university": "Shiraz University · Faculty of Humanities and Letters",
         "department": "Department of Foreign Languages and Linguistics",
-        "association": "Digital Humanities Student Association",
+        "association": "Digital Humanities Center (DHC)",
         "tagline": "Humanities, in dialogue with computation.",
-        "footer_intro": "A student community exploring how digital methods can support humanities research, teaching, and public engagement.",
+        "footer_intro": "The Digital Humanities Center (DHC) and its student association explore how digital methods can support humanities research, teaching, and public engagement.",
         "footer_nav": "Explore", "footer_contact": "Contact", "privacy": "Privacy and data use",
-        "admin_note": "Content is maintained by authorized association editors.", "theme": "Theme", "language": "فارسی",
+        "admin_note": "Content is maintained by authorized DHC editors.", "theme": "Theme", "language": "فارسی",
         "skip": "Skip to main content", "menu": "Menu", "dark": "Dark", "light": "Light",
         "see_all": "View all", "read_more": "Read article", "details": "Full details", "register": "Registration",
         "join": "Attendance link", "expired": "This event has ended; attendance and registration links are no longer available.",
@@ -63,31 +63,31 @@ LABELS = {
         "no_members_title": "No public member profiles", "no_members": "Member information is shown only after the relevant consent has been obtained.",
         "no_certificates_title": "No matching certificate", "certificate_note": "Enter the certificate number exactly as printed. This lookup displays only the holder name, issue date, and certificate type.",
         "certificate_format": "Temporary format rule", "certificate_heading": "Certificate verification", "certificate_submit": "Verify certificate",
-        "contact_head": "Association head", "contact_supervisor": "Faculty supervisor", "not_configured": "Not configured yet",
+        "contact_head": "Student association lead", "contact_supervisor": "Faculty supervisor", "not_configured": "Not configured yet",
         "message_form": "Send a message", "name": "Name", "email": "Email address", "subject": "Topic", "message": "Message",
         "send": "Submit message", "privacy_consent": "I understand this information will be used only to respond to my message.",
         "privacy_explain": "The form collects your name, email address, topic, and message. Designated association administrators can access submissions to respond to you. Submissions are not deleted automatically; the intended retention period is 12 months after the matter is closed, followed by a review for deletion. Do not include sensitive information. Contact the association through the published email links if you prefer not to use this form.",
         "translation_missing": "The English version is not available yet; the Persian text is shown here.",
         "former_members": "Former members", "current_members": "Current members", "aims": "Aims and activities", "workflow": "How to contribute",
         "member_consent": "Before adding a member profile, obtain explicit consent for the name and role. Obtain separate permission for photographs and use descriptive alt text.",
-        "about_intro": "The Digital Humanities Student Association brings students together to explore the questions, methods, and tools that connect the humanities with digital research.",
+        "about_intro": "The Digital Humanities Center (DHC) and its student association bring students together to explore the questions, methods, and tools that connect the humanities with digital research.",
         "about_one_title": "Methods with context", "about_one": "Explore text analysis, digital archives, mapping, data visualization, computational methods, and critical approaches to digital culture.",
         "about_two_title": "Peer learning", "about_two": "Create space for workshops, talks, reading groups, tutorials, and collaborative projects across languages and disciplines.",
         "about_three_title": "Careful publishing", "about_three": "Share useful work accessibly, credit its authors, respect participants’ rights, and distinguish confirmed information from plans.",
         "article_author": "Author", "published": "Published", "back_articles": "Back to articles", "back_events": "Back to events", "back_webinars": "Back to webinars",
         "error_title": "Page not found", "error_body": "This address may be outdated or the page may have moved. Use the navigation to continue.",
-        "privacy_title": "Privacy and data use", "privacy_body": "The association collects only the information needed to respond to contact messages. Published member details and photographs require explicit consent. Certificate verification shows only the four fields listed on the verification page.",
+        "privacy_title": "Privacy and data use", "privacy_body": "The DHC student association collects only the information needed to respond to contact messages. Published member details and photographs require explicit consent. Certificate verification shows only the four fields listed on the verification page.",
         "not_public": "This record is not published.", "session_details": "Session details", "rights_note": "A recording link is shown only when the recording is available and sharing permission has been confirmed.",
         "date_pair": "Gregorian and Persian calendar dates are listed together for events.", "contact_alternative": "The contact details below are the alternative route when the form is unavailable.",
     },
     "fa": {
         "university": "دانشگاه شیراز · دانشکده علوم انسانی و ادبیات",
         "department": "گروه زبان‌های خارجی و زبان‌شناسی",
-        "association": "انجمن دانشجویی علوم انسانی دیجیتال",
+        "association": "مرکز علوم انسانی دیجیتال (DHC)",
         "tagline": "علوم انسانی در گفت‌وگو با محاسبات.",
-        "footer_intro": "جامعه‌ای دانشجویی برای بررسی نقش روش‌های دیجیتال در پژوهش، آموزش و ارتباط عمومی در علوم انسانی.",
+        "footer_intro": "مرکز علوم انسانی دیجیتال (DHC) و انجمن دانشجویی آن، نقش روش‌های دیجیتال را در پژوهش، آموزش و ارتباط عمومی در علوم انسانی بررسی می‌کنند.",
         "footer_nav": "بخش‌ها", "footer_contact": "تماس", "privacy": "حریم خصوصی و استفاده از داده‌ها",
-        "admin_note": "محتوا به‌وسیله ویرایشگران مجاز انجمن مدیریت می‌شود.", "theme": "پوسته", "language": "English",
+        "admin_note": "محتوا به‌وسیله ویرایشگران مجاز DHC مدیریت می‌شود.", "theme": "پوسته", "language": "English",
         "skip": "رفتن به محتوای اصلی", "menu": "منو", "dark": "تیره", "light": "روشن",
         "see_all": "مشاهده همه", "read_more": "مطالعه مقاله", "details": "جزئیات کامل", "register": "ثبت‌نام",
         "join": "پیوند حضور", "expired": "این رویداد پایان یافته است؛ پیوندهای ثبت‌نام و حضور دیگر در دسترس نیستند.",
@@ -109,20 +109,20 @@ LABELS = {
         "no_members_title": "نمایه عمومی اعضا موجود نیست", "no_members": "اطلاعات اعضا تنها پس از دریافت رضایت مربوط منتشر می‌شود.",
         "no_certificates_title": "گواهی منطبقی پیدا نشد", "certificate_note": "شماره را دقیقاً مطابق نسخه چاپ‌شده وارد کنید. نتیجه فقط نام دارنده، تاریخ صدور و نوع گواهی را نمایش می‌دهد.",
         "certificate_format": "الگوی موقت شماره", "certificate_heading": "اعتبارسنجی گواهی", "certificate_submit": "بررسی گواهی",
-        "contact_head": "مسئول انجمن", "contact_supervisor": "استاد ناظر دانشکده", "not_configured": "هنوز تنظیم نشده است",
+        "contact_head": "مسئول انجمن دانشجویی", "contact_supervisor": "استاد ناظر دانشکده", "not_configured": "هنوز تنظیم نشده است",
         "message_form": "ارسال پیام", "name": "نام", "email": "نشانی ایمیل", "subject": "موضوع", "message": "پیام",
         "send": "ارسال پیام", "privacy_consent": "می‌پذیرم که این اطلاعات فقط برای پاسخ‌گویی به پیامم استفاده شود.",
         "privacy_explain": "این فرم نام، نشانی ایمیل، موضوع و متن پیام را دریافت می‌کند. مدیران مشخص‌شده انجمن برای پاسخ‌گویی به پیام به اطلاعات دسترسی دارند. پیام‌ها به‌طور خودکار حذف نمی‌شوند؛ دوره نگهداری موردنظر ۱۲ ماه پس از بسته‌شدن موضوع است و پس از آن حذف بررسی می‌شود. اطلاعات حساس ارسال نکنید. در صورت تمایل به استفاده‌نکردن از فرم، از پیوندهای ایمیل منتشرشده استفاده کنید.",
         "translation_missing": "نسخهٔ فارسی هنوز آماده نیست؛ متن انگلیسی در این بخش نمایش داده می‌شود.",
         "former_members": "اعضای پیشین", "current_members": "اعضای فعلی", "aims": "اهداف و فعالیت‌ها", "workflow": "روش مشارکت",
         "member_consent": "پیش از افزودن نمایه، برای انتشار نام و نقش رضایت صریح بگیرید. اجازه انتشار عکس باید جداگانه دریافت شود و برای عکس متن جایگزین توصیفی بنویسید.",
-        "about_intro": "انجمن دانشجویی علوم انسانی دیجیتال دانشجویان را گرد هم می‌آورد تا پرسش‌ها، روش‌ها و ابزارهای پیونددهنده علوم انسانی و پژوهش دیجیتال را بررسی کنند.",
+        "about_intro": "مرکز علوم انسانی دیجیتال (DHC) و انجمن دانشجویی آن، دانشجویان را گرد هم می‌آورند تا پرسش‌ها، روش‌ها و ابزارهای پیونددهنده علوم انسانی و پژوهش دیجیتال را بررسی کنند.",
         "about_one_title": "روش‌شناسی همراه با زمینه", "about_one": "تحلیل متن، آرشیوهای دیجیتال، نقشه‌نگاری، مصورسازی داده، روش‌های محاسباتی و رویکردهای انتقادی به فرهنگ دیجیتال را بررسی کنید.",
         "about_two_title": "یادگیری همتا به همتا", "about_two": "برای کارگاه‌ها، سخنرانی‌ها، گروه‌های مطالعاتی، راهنماها و پروژه‌های مشترک میان زبان‌ها و رشته‌ها فضا ایجاد کنید.",
         "about_three_title": "انتشار مسئولانه", "about_three": "کارهای سودمند را دسترس‌پذیر منتشر کنید، نویسندگان را معرفی کنید، به حقوق مشارکت‌کنندگان احترام بگذارید و اطلاعات قطعی را از برنامه‌های احتمالی جدا کنید.",
         "article_author": "نویسنده", "published": "تاریخ انتشار", "back_articles": "بازگشت به مقاله‌ها", "back_events": "بازگشت به رویدادها", "back_webinars": "بازگشت به وبینارها",
         "error_title": "صفحه پیدا نشد", "error_body": "ممکن است نشانی قدیمی باشد یا صفحه جابه‌جا شده باشد. برای ادامه از راهبری سایت استفاده کنید.",
-        "privacy_title": "حریم خصوصی و استفاده از داده‌ها", "privacy_body": "انجمن فقط اطلاعات لازم برای پاسخ‌گویی به پیام‌ها را دریافت می‌کند. انتشار مشخصات اعضا و عکس‌ها به رضایت صریح نیاز دارد. صفحه اعتبارسنجی تنها چهار فیلد مشخص‌شده را نمایش می‌دهد.",
+        "privacy_title": "حریم خصوصی و استفاده از داده‌ها", "privacy_body": "انجمن دانشجویی مرکز علوم انسانی دیجیتال فقط اطلاعات لازم برای پاسخ‌گویی به پیام‌ها را دریافت می‌کند. انتشار مشخصات اعضا و عکس‌ها به رضایت صریح نیاز دارد. صفحه اعتبارسنجی تنها چهار فیلد مشخص‌شده را نمایش می‌دهد.",
         "not_public": "این مورد منتشر نشده است.", "session_details": "جزئیات نشست", "rights_note": "پیوند ضبط تنها زمانی نمایش داده می‌شود که نسخه ضبط‌شده موجود و اجازه انتشار تأیید شده باشد.",
         "date_pair": "برای رویدادها، تاریخ میلادی و خورشیدی در کنار هم درج می‌شود.", "contact_alternative": "در صورت در دسترس‌نبودن فرم، از اطلاعات تماس زیر استفاده کنید.",
     },
@@ -245,7 +245,7 @@ def header_html(lang: str, current: str, page_key: str) -> str:
     return f'''<a class="skip-link" href="#main">{esc(L["skip"])}</a>
 <header class="site-header"><div class="shell header-inner">
   <a class="brand" href="index.html" aria-label="{esc(L['association'])} — {esc(L['university'])}">
-    <span class="brand-mark" aria-hidden="true">DH</span>
+    <span class="brand-mark" aria-hidden="true">DHC</span>
     <span class="brand-copy"><strong>{esc(L['association'])}</strong><small>{esc(L['university'])}</small></span>
   </a>
   <div class="header-tools">
@@ -261,7 +261,7 @@ def footer_html(lang: str) -> str:
     L = LABELS[lang]
     paths = dict((key, path) for key, _, path in NAV[lang])
     return f'''<footer class="site-footer"><div class="shell footer-main">
-  <div><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">DH</span><span class="brand-copy"><strong>{esc(L['association'])}</strong><small>{esc(L['department'])}</small></span></a><p style="margin-top:1rem;max-width:42ch">{esc(L['footer_intro'])}</p></div>
+  <div><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">DHC</span><span class="brand-copy"><strong>{esc(L['association'])}</strong><small>{esc(L['department'])}</small></span></a><p style="margin-top:1rem;max-width:42ch">{esc(L['footer_intro'])}</p></div>
   <div><div class="footer-title">{esc(L['footer_nav'])}</div><ul class="footer-links">{''.join(f'<li><a href="{esc(path)}">{esc(label)}</a></li>' for _, label, path in NAV[lang][:7])}<li><a href="privacy.html">{esc(L['privacy'])}</a></li></ul></div>
   <div><div class="footer-title">{esc(L['footer_contact'])}</div><p>{esc(L['university'])}<br>{esc(L['department'])}</p><p><a href="contact.html">{esc(NAV[lang][6][1])}</a></p><p class="not-configured">{esc(L['admin_note'])}</p></div>
 </div><div class="shell footer-bottom"><span>© {TODAY_TEHRAN.year} · {esc(L['association'])}</span><span>{esc(L['department'])}</span></div></footer>'''
@@ -277,14 +277,18 @@ def page_html(lang: str, current: str, page_key: str, title: str, description: s
     if base:
         canonical = f'<link rel="canonical" href="{esc(base)}/{lang}/{esc(current)}"><link rel="alternate" hreflang="en" href="{esc(base)}/en/{esc(current)}"><link rel="alternate" hreflang="fa" href="{esc(base)}/fa/{esc(current)}">'
     og_img = f'{base}/assets/images/social-card.svg' if base else '../assets/images/social-card.svg'
-    theme_bootstrap = """(function(){try{var s=localStorage.getItem('dhsa-theme');var d=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.dataset.theme=s||(d?'dark':'light')}catch(e){}})();"""
+    theme_bootstrap = """(function(){try{var s=localStorage.getItem('dhc-theme');var d=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.dataset.theme=s||(d?'dark':'light')}catch(e){}})();"""
+    if title == L["association"]:
+        document_title = f'{L["association"]} · {"Shiraz University" if lang == "en" else "دانشگاه شیراز"}'
+    else:
+        document_title = f'{title} · {L["association"]}'
     return f'''<!doctype html>
 <html lang="{lang}" dir="{direction}">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{esc(title)} · {esc(L['association'])}</title><meta name="description" content="{esc(description)}">
+<title>{esc(document_title)}</title><meta name="description" content="{esc(description)}">
 <meta name="color-scheme" content="light dark"><meta name="theme-color" content="#172724">
-<meta property="og:type" content="website"><meta property="og:title" content="{esc(title)} · {esc(L['association'])}"><meta property="og:description" content="{esc(description)}"><meta property="og:image" content="{esc(og_img)}"><meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website"><meta property="og:title" content="{esc(document_title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:image" content="{esc(og_img)}"><meta name="twitter:card" content="summary_large_image">
 {canonical}
 <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../assets/css/site.css">
 <script>{theme_bootstrap}</script>
@@ -411,7 +415,7 @@ def home_body(lang: str, events, announcements, articles):
       <p class="lead">{esc(L['about_intro'])}</p><p class="hero-note">{esc(L['department'])}</p>
       <div class="hero-actions"><a class="button" href="events.html">{esc(NAV[lang][3][1])} ↗</a><a class="button secondary" href="certificates.html">{esc(NAV[lang][7][1])}</a></div>
     </div><div class="hero-art"><img src="../assets/images/dh-network.svg" alt="" aria-hidden="true"><div class="hero-index"><strong>DH / 01</strong>{esc(L['association'])}</div></div></div></section>'''
-    feature = f'''<div class="shell feature-strip"><div class="feature-block"><span class="feature-kicker">01 / {esc(L['aims'])}</span><h3>{esc(L['about_one_title'])}</h3><p>{esc(L['about_one'])}</p></div><div class="feature-block"><span class="feature-kicker">02 / {esc(L['workflow'])}</span><h3>{esc(L['about_two_title'])}</h3><p>{esc(L['about_two'])}</p></div><div class="feature-block"><span class="feature-kicker">03 / DHSA</span><h3>{esc(L['about_three_title'])}</h3><p>{esc(L['about_three'])}</p></div></div>'''
+    feature = f'''<div class="shell feature-strip"><div class="feature-block"><span class="feature-kicker">01 / {esc(L['aims'])}</span><h3>{esc(L['about_one_title'])}</h3><p>{esc(L['about_one'])}</p></div><div class="feature-block"><span class="feature-kicker">02 / {esc(L['workflow'])}</span><h3>{esc(L['about_two_title'])}</h3><p>{esc(L['about_two'])}</p></div><div class="feature-block"><span class="feature-kicker">03 / DHC</span><h3>{esc(L['about_three_title'])}</h3><p>{esc(L['about_three'])}</p></div></div>'''
     upcoming_content = ''.join(event_card(e, lang) for e in event_future[:1]) or empty_state(L['no_upcoming_title'], L['no_upcoming'])
     if announcements:
         announcement_content = '<div class="grid-3">' + ''.join(
@@ -607,7 +611,7 @@ def privacy_body(lang: str) -> str:
 
 
 def root_index():
-    return '''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="x-ua-compatible" content="ie=edge"><title>Digital Humanities Student Association · Shiraz University</title><meta name="description" content="Digital Humanities Student Association at Shiraz University. English and Persian website."><link rel="stylesheet" href="assets/css/site.css"><script>(function(){var saved='';try{saved=localStorage.getItem('dhsa-language')||''}catch(e){}var lang=saved||((navigator.language||'').toLowerCase().startsWith('fa')?'fa':'en');if(lang==='fa'||lang==='en'){window.location.replace(lang+'/index.html')}})();</script></head><body><main id="main" class="shell" style="padding-block:12vh"><p class="eyebrow">Shiraz University</p><h1>Digital Humanities Student Association</h1><p class="lead">Choose a language to continue.</p><div class="hero-actions"><a class="button" href="en/index.html" lang="en">English</a><a class="button secondary" href="fa/index.html" lang="fa" dir="rtl">فارسی</a></div><p style="margin-top:2rem;color:var(--muted)">دانشگاه شیراز · انجمن دانشجویی علوم انسانی دیجیتال</p></main><script>document.querySelectorAll('a[href^="en/"],a[href^="fa/"]').forEach(function(a){a.addEventListener('click',function(){try{localStorage.setItem('dhsa-language',a.href.includes('/fa/')?'fa':'en')}catch(e){}})});</script></body></html>'''
+    return '''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="x-ua-compatible" content="ie=edge"><title>DHC · Digital Humanities Center and Student Association · Shiraz University</title><meta name="description" content="Digital Humanities Center (DHC) and its student association at Shiraz University. English and Persian website."><meta name="color-scheme" content="light dark"><link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/css/site.css"><script>(function(){var saved='';try{saved=localStorage.getItem('dhc-language')||''}catch(e){}var lang=saved||((navigator.language||'').toLowerCase().startsWith('fa')?'fa':'en');if(lang==='fa'||lang==='en'){window.location.replace(lang+'/index.html')}})();</script></head><body><main id="main" class="shell" style="padding-block:12vh"><p class="eyebrow">Shiraz University</p><h1>Digital Humanities Center (DHC)</h1><p class="lead">Student Association · Faculty of Humanities and Letters</p><div class="hero-actions"><a class="button" href="en/index.html" lang="en">English</a><a class="button secondary" href="fa/index.html" lang="fa" dir="rtl">فارسی</a></div><p style="margin-top:2rem;color:var(--muted)" lang="fa" dir="rtl">دانشگاه شیراز · مرکز علوم انسانی دیجیتال (DHC) و انجمن دانشجویی آن</p></main><script>document.querySelectorAll('a[href^="en/"],a[href^="fa/"]').forEach(function(a){a.addEventListener('click',function(){try{localStorage.setItem('dhc-language',a.href.includes('/fa/')?'fa':'en')}catch(e){}})});</script></body></html>'''
 
 
 def main():
@@ -737,7 +741,7 @@ def main():
         (folder / "404.html").write_text(page_html(lang, "404.html", "", LABELS[lang]["error_title"], LABELS[lang]["error_body"], not_found), encoding="utf-8")
 
     # Root-level 404 has root-relative-to-project assets and language choices.
-    root_404 = f"""<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>Page not found · Digital Humanities Student Association</title><link rel=\"stylesheet\" href=\"assets/css/site.css\"></head><body><main class=\"shell\" style=\"padding-block:12vh\"><p class=\"eyebrow\">404</p><h1>Page not found</h1><p class=\"lead\">This address may be outdated or the page may have moved.</p><div class=\"hero-actions\"><a class=\"button\" href=\"en/index.html\">English home</a><a class=\"button secondary\" href=\"fa/index.html\" lang=\"fa\" dir=\"rtl\">صفحهٔ اصلی فارسی</a></div></main></body></html>"""
+    root_404 = f"""<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>Page not found · Digital Humanities Center (DHC)</title><link rel=\"stylesheet\" href=\"assets/css/site.css\"></head><body><main class=\"shell\" style=\"padding-block:12vh\"><p class=\"eyebrow\">404</p><h1>Page not found</h1><p class=\"lead\">This address may be outdated or the page may have moved.</p><div class=\"hero-actions\"><a class=\"button\" href=\"en/index.html\">English home</a><a class=\"button secondary\" href=\"fa/index.html\" lang=\"fa\" dir=\"rtl\">صفحهٔ اصلی فارسی</a></div></main></body></html>"""
     (DIST / "404.html").write_text(root_404, encoding="utf-8")
     base = str(SETTINGS.get("publicBaseUrl") or "").rstrip("/")
     if base:

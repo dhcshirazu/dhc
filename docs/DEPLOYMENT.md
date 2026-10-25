@@ -5,10 +5,10 @@
 1. Put the repository under an institution-controlled GitHub organization or institutional account. Add a second trusted administrator and keep recovery methods current.
 2. Push the complete repository to the default branch, named `main` in the included workflow.
 3. Open **Settings → Pages → Build and deployment** and choose **GitHub Actions** as the source.
-4. Inspect the first workflow run under **Actions**. It runs `python build.py`, uploads `dist/`, and deploys the generated site.
+4. Inspect the **Build and publish DHC website** workflow under **Actions**. It runs `python build.py`, checks the generated pages, uploads `dist/`, and deploys the generated site.
 5. Add the resulting public site URL to `content/site-settings.json` as `publicBaseUrl` (without a trailing slash), commit the change, and let the workflow redeploy.
 
-The site uses relative internal links so it can work as a project site (`https://ORG.github.io/REPOSITORY/`) or a user/organization site. `publicBaseUrl` is still required for canonical links and the sitemap. If using a custom domain, configure the domain in GitHub Pages settings and add the appropriate DNS records; a `CNAME` file alone does not configure DNS.
+For the current `dhc_website` repository, the default project-site URL is `https://<GITHUB-OWNER>.github.io/dhc_website/`, where `<GITHUB-OWNER>` is the exact GitHub username or organization that owns the repository. Set `publicBaseUrl` to the same URL without the trailing slash, for example `https://<GITHUB-OWNER>.github.io/dhc_website`. The site uses relative internal links, while `publicBaseUrl` is required for canonical links and the sitemap. If using a custom domain, configure the domain in GitHub Pages settings and add the appropriate DNS records; a `CNAME` file alone does not configure DNS.
 
 ## Pages CMS editor interface
 
@@ -17,7 +17,7 @@ The site uses relative internal links so it can work as a project site (`https:/
 1. Sign in using the association-approved GitHub account.
 2. Install the Pages CMS GitHub App on the website repository only, with the least access its workflow requires.
 3. Open the repository and ensure the `.pages.yml` file is present at the repository root.
-4. Use the configured groups (`Site settings and contacts`, `Events`, `Webinar archive`, `Articles and tutorials`, `Current and former members`, `Announcements`, and `Certificate verification records`) to edit content.
+4. Use the configured groups (`DHC site settings and contacts`, `Events`, `Webinar archive`, `Articles and tutorials`, `Current and former members`, `Announcements`, and `Certificate verification records`) to edit content.
 5. Make content edits on a review branch or through pull requests where practical. Only approved changes should reach `main`.
 
 Pages CMS authentication is not a substitute for repository permissions. Only trusted, authorized GitHub accounts should have write access. The public website and source repository may expose committed data, so never save contact-form submissions, private consent records, passwords, recovery codes, or other secrets in this repository.

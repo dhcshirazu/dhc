@@ -103,6 +103,29 @@ def main() -> int:
                 continue
             if not target.exists():
                 errors.append(f"{relative}: missing local target for {url} (expected {target.relative_to(DIST.resolve())}).")
+    # Keep the public branding and contact-form message protocol consistent.
+    en_home = DIST / "en" / "index.html"
+    fa_home = DIST / "fa" / "index.html"
+    if en_home.exists() and "Digital Humanities Center (DHC)" not in en_home.read_text(encoding="utf-8"):
+        errors.append("English homepage is missing the approved DHC brand name.")
+    if fa_home.exists() and "مرکز علوم انسانی دیجیتال (DHC)" not in fa_home.read_text(encoding="utf-8"):
+        errors.append("Persian homepage is missing the approved DHC brand name.")
+    for page in pages:
+        try:
+            page_text = page.read_text(encoding="utf-8")
+        except OSError:
+            continue
+        old_brand = "Digital Humanities " + "Student Association"
+        if old_brand in page_text:
+            errors.append(f"{page.relative_to(DIST)} still contains the previous English brand wording.")
+    site_script = DIST / "assets" / "js" / "site.js"
+    apps_script = ROOT / "apps-script" / "Code.gs"
+    if site_script.exists() and apps_script.exists():
+        browser_contract = "dhc-contact-form" in site_script.read_text(encoding="utf-8")
+        server_contract = "dhc-contact-form" in apps_script.read_text(encoding="utf-8")
+        if not browser_contract or not server_contract:
+            errors.append("Contact-form message identifiers do not match between the website and Apps Script.")
+
     registry = DIST / "data" / "certificates.json"
     if not registry.exists():
         errors.append("Certificate registry dist/data/certificates.json is missing.")

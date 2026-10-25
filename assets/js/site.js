@@ -18,13 +18,13 @@
   }
   if (themeButton) {
     let saved = null;
-    try { saved = localStorage.getItem('dhsa-theme'); } catch (_) { /* Storage can be disabled. */ }
+    try { saved = localStorage.getItem('dhc-theme'); } catch (_) { /* Storage can be disabled. */ }
     const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     applyTheme(saved || (systemDark ? 'dark' : 'light'));
     themeButton.addEventListener('click', () => {
       const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
       applyTheme(next);
-      try { localStorage.setItem('dhsa-theme', next); } catch (_) { /* Current session still works. */ }
+      try { localStorage.setItem('dhc-theme', next); } catch (_) { /* Current session still works. */ }
     });
   }
   if (navButton && nav) {
@@ -50,7 +50,7 @@
     link.addEventListener('click', () => {
       const nextLanguage = link.getAttribute('hreflang');
       if (nextLanguage === 'en' || nextLanguage === 'fa') {
-        try { localStorage.setItem('dhsa-language', nextLanguage); } catch (_) { /* Language links still work. */ }
+        try { localStorage.setItem('dhc-language', nextLanguage); } catch (_) { /* Language links still work. */ }
       }
     });
   });
@@ -212,7 +212,7 @@
       });
       window.addEventListener('message', event => {
         const data = event.data;
-        if (!data || data.source !== 'dhsa-contact-form' || !pendingId || data.requestId !== pendingId) return;
+        if (!data || data.source !== 'dhc-contact-form' || !pendingId || data.requestId !== pendingId) return;
         clearTimeout(timeoutHandle);
         pendingId = '';
         submit.disabled = false;

@@ -1,4 +1,4 @@
-# Content editing and editorial workflow
+# DHC content editing and editorial workflow
 
 ## Editorial path
 
@@ -65,7 +65,11 @@ Do not add email, phone, national/student ID, date of birth, signature image, gr
 
 This file contains public contact names/emails, official social URLs, base URL, contact form endpoint URL, certificate format regex, and retention period. Do not place credentials or API tokens here. The certificate regex is currently a broad placeholder (`^[A-Z0-9-]{4,24}$`). Agree the final format with the association before replacing it.
 
-## Bilingual consistency
+## Naming and bilingual consistency
+
+Use **Digital Humanities Center (DHC)** as the English brand and **مرکز علوم انسانی دیجیتال (DHC)** as the Persian brand. When the student body needs to be distinguished from the Center, use “the DHC student association” in English and “انجمن دانشجویی مرکز علوم انسانی دیجیتال” in Persian. Use this naming standard consistently in public copy, metadata, email subjects, and code identifiers. The website header/footer brand strings are in the English and Persian `LABELS` dictionaries near the top of `build.py`.
+
+
 
 - Keep language links on the equivalent page, and use the same slug across English/Persian versions of an item.
 - Maintain paired English and Persian event dates. The Gregorian ISO value powers sorting/filtering; the display strings should be reviewed by a Persian-calendar-literate editor.

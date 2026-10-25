@@ -1,4 +1,4 @@
-name: Build and publish GitHub Pages
+name: Build and publish DHC website
 
 on:
   push:

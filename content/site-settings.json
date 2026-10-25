@@ -7,8 +7,8 @@
   "certificatePatternNoteFa": "این الگو موقت است؛ پس از تصویب قالب شماره گواهی، آن را تغییر دهید.",
   "head": {
     "name": "",
-    "roleEn": "Current association head",
-    "roleFa": "مسئول فعلی انجمن",
+    "roleEn": "Current student association lead",
+    "roleFa": "مسئول فعلی انجمن دانشجویی",
     "email": "",
     "termEn": "",
     "termFa": ""
@@ -16,7 +16,7 @@
   "supervisor": {
     "name": "",
     "roleEn": "Faculty supervisor",
-    "roleFa": "استاد ناظر انجمن",
+    "roleFa": "استاد ناظر انجمن دانشجویی",
     "email": ""
   },
   "social": {

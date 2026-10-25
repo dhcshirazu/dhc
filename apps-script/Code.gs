@@ -1,5 +1,5 @@
 /**
- * Contact form endpoint for the Digital Humanities Student Association website.
+ * Contact form endpoint for the Digital Humanities Center (DHC) and its student association website.
  * Deploy as a Google Apps Script web app that executes as the designated account.
  * Configure Script Properties: SPREADSHEET_ID and NOTIFICATION_EMAIL.
  * The response page posts only a success flag and request token to the parent page.
@@ -16,7 +16,7 @@ const CONFIG = {
 };
 
 function doGet() {
-  return ContentService.createTextOutput('DHSA contact endpoint is ready. Submit the contact form from the official website.');
+  return ContentService.createTextOutput('DHC contact endpoint is ready. Submit the contact form from the official website.');
 }
 
 function doPost(e) {
@@ -46,7 +46,7 @@ function doPost(e) {
     try {
       MailApp.sendEmail({
         to: notificationEmail,
-        subject: '[DHSA website] New contact message: ' + topic.replace(/[\r\n]+/g, ' ').slice(0, 100),
+        subject: '[DHC website] New contact message: ' + topic.replace(/[\r\n]+/g, ' ').slice(0, 100),
         body: [
           'A new message was submitted through the association website.',
           '', 'Name: ' + name, 'Email: ' + email, 'Topic: ' + topic,
@@ -55,7 +55,7 @@ function doPost(e) {
           'Reply directly to the sender using the supplied email address.'
         ].join('\n'),
         replyTo: email,
-        name: 'DHSA website contact form'
+        name: 'DHC website contact form'
       });
     } catch (mailError) {
       notificationStatus = 'failed: ' + String(mailError.message || mailError).slice(0, 180);
@@ -109,7 +109,7 @@ function applyRateLimit(email) {
 }
 
 function responsePage(success, requestId) {
-  const payload = JSON.stringify({ source: 'dhsa-contact-form', success: Boolean(success), requestId: requestId });
+  const payload = JSON.stringify({ source: 'dhc-contact-form', success: Boolean(success), requestId: requestId });
   const safePayload = payload.replace(/</g, '\\u003c');
   const output = HtmlService.createHtmlOutput(
     '<!doctype html><html><head><meta charset="utf-8"><title>Contact form response</title></head>' +

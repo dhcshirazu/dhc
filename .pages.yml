@@ -3,7 +3,7 @@ media:
   output: /media
 content:
   - name: site-settings
-    label: Site settings and contacts
+    label: DHC site settings and contacts
     type: file
     path: content/site-settings.json
     format: json
@@ -12,7 +12,7 @@ content:
         label: Public site URL
         type: string
       - name: associationEmail
-        label: Association email
+        label: DHC contact email
         type: string
       - name: appsScriptWebAppUrl
         label: Google Apps Script web app URL
@@ -27,7 +27,7 @@ content:
         label: Certificate pattern note (Persian)
         type: text
       - name: head
-        label: Association head
+        label: Student association lead
         type: object
         fields:
           - { name: name, label: Public name, type: string }

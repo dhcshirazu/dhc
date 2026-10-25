@@ -53,7 +53,7 @@ button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
 .site-header { position: relative; z-index: 5; border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--paper) 92%, transparent); }
 .header-inner { min-height: 84px; display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; }
 .brand { display: inline-flex; align-items: center; gap: .8rem; min-width: 200px; color: var(--ink); text-decoration: none; }
-.brand-mark { flex: 0 0 42px; width: 42px; height: 42px; display: grid; place-items: center; border-radius: 14px 14px 14px 3px; background: var(--ink); color: var(--gold); font-family: Georgia, serif; font-size: 1.3rem; font-weight: 700; }
+.brand-mark { flex: 0 0 42px; width: 42px; height: 42px; display: grid; place-items: center; border-radius: 14px 14px 14px 3px; background: var(--ink); color: var(--gold); font-family: Georgia, serif; font-size: 1.05rem; letter-spacing: -.04em; font-weight: 700; }
 .brand-copy { display: flex; flex-direction: column; line-height: 1.2; }
 .brand-copy strong { font-size: .92rem; letter-spacing: -.02em; }
 .brand-copy small { margin-top: .25rem; color: var(--muted); font-size: .72rem; }
